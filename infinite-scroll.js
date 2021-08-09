@@ -105,7 +105,7 @@ function markContent () {
 
 function searchInContent (e) {
     const singlePost = document.querySelectorAll('.posts__item');
-    const searched = e.target.value
+    const searched = e.target.value.toLowerCase()
     singlePost.forEach(post => {
         const title = post.querySelector('.post__title').innerText.toLowerCase()
         const description = post.querySelector('.posts__description').innerText.toLowerCase()
