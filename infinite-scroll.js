@@ -114,8 +114,10 @@ function searchInContent (e) {
 
             // Resaltar el texto
             const pattern = new RegExp(`${searched}`, 'gi')
-            const replacedText = title.replace(pattern, () => `<mark>${searched}</mark>`)
-            post.querySelector('.post__title').innerHTML = replacedText
+            const replaceInTitle = title.replace(pattern, () => `<mark>${searched}</mark>`)
+            const replacedInDescription = description.replace(pattern, () => `<mark>${searched}</mark>`)
+            post.querySelector('.post__title').innerHTML = replaceInTitle
+            post.querySelector('.posts__description').innerHTML = replacedInDescription
         } else {
             post.style.display = 'none'
         }
