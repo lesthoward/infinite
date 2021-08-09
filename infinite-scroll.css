@@ -1,0 +1,150 @@
+html {
+    font-size: 62.5%;
+}
+*, ::before,::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E3E5EB;
+    font-family: 'Poppins', arial;
+    font-size: 1.6rem;
+}
+
+::selection {
+    background: #2EBFA5;
+    color: #fff;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.container__title {
+    margin: 0;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.posts {
+    background: #F3F5FA;
+    max-width: 100%;
+    width: 60rem;
+    margin: 5rem auto;
+    box-shadow: 0 .4rem .9rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.posts__filter {
+    width: 100%;
+    height: 7rem;
+}
+
+.posts__search {
+    display: block;
+    height: inherit;
+    width: inherit;
+    padding: 0 3rem;
+    outline: none;
+    border: none;
+    /* border-radius: .5rem; */
+}
+
+.posts__wrapper {
+    display: flex;
+    flex-direction: column;
+    /* column-gap: 1rem; */
+    row-gap: 5rem;
+    margin: 3rem 5rem;
+}
+
+.posts__item {
+    position: relative;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: .5rem;
+}   
+
+.post__title {
+    color: #2EBFA5;
+    margin-bottom: 1rem;
+}
+
+.posts__description {
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.posts__numer {
+    background: #2EBFA5;
+    color: #fff;
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .2rem solid rgba(0, 0, 0, .5);
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+
+.loader {
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    /* display: none; */
+    justify-content: center;
+    column-gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.loader--active {
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s ease-in-out;
+}
+
+.loader__circle {
+    background: #2EBFA5;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: .1rem solid rgba(0, 0, 0, .2);
+    animation: bounce 1s ease-in infinite;
+}
+.loader__circle:nth-of-type(2) {
+    animation-delay: .2s;
+}
+
+.loader__circle:nth-of-type(3) {
+    animation-delay: .3s;
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-1rem)
+    }
+}
+
+.post__footertext {
+    text-align: center;
+}
+
+.posts__loadmore {
+    color: #2EBFA5;
+    cursor: pointer;
+}
