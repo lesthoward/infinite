@@ -56,7 +56,12 @@ window.addEventListener('scroll', () => {
     const {scrollTop, clientHeight, scrollHeight ,} = document.documentElement
     // ClientHeigh: es el alto de la pantalla del navegador, lo que yo veo. Si tengo la consola abierta, voy a ver menos y debo hacer más scroll
     // scrollTop: La distancia desde el inicio del documento, si mi clientHeight es poco entonces debo hacer más scroll
-    if (scrollTop + clientHeight > scrollHeight - 50) {
+
+
+    // Estas no son compatibles con la versión para telefono
+    // scrollTop + clientHeight
+    console.log(window.scrollY + window.innerHeight);
+    if (window.scrollY + window.innerHeight > scrollHeight - 50) {
         // Con este variable calculo para que no se ejecuta la función de obtener data múltiples veces por el evento de scroll. De modo que le digo, si se cumple la condición suma el "fired", y si es menor a 1 o igual, ejecuta mis funciones y al momento que se obtienen los datos "getData()" resetear la variable fired a 0.
         fired++
         if (fired <= 1) {
